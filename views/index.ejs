@@ -1,0 +1,33 @@
+<!--Include header-->
+<%-include('include/_header')%>
+<!--/Include header-->
+
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <a href="/add-shinobi" class="border-shadow">
+                <span class="text-gradient">Add new shinobi <i class="fa-solid fa-user-ninja"></i></span>
+            </a>
+        </div>
+        <form action="/" method="POST">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Clan</th>
+                        <th>Rank</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%-include('include/_show')%>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</main>
+<!--Include footer-->
+<%-include('include/_footer')%>
+<!--/Include footer-->

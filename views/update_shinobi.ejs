@@ -1,0 +1,46 @@
+<%-include('include/_header')%>
+<main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <div class="filter">
+                <a href="/"><i class="fa-solid fa-backward"></i> Shinobi List</a>
+            </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Edit shinobi</h2>
+            <span class="text-light">Use this form to edit an existing shinobi</span>
+        </div>
+        <form method="POST" id="update_shinobi">
+            <div class="new_shinobi">
+                <div class="form-group">
+                    <label for="name" class="text-light">Name</label>
+                    <input type="hidden" name="id" value="<%=shinobi._id %>">
+                    <input type="text" name="name" value="<%=shinobi.name %>" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="clan" class="text-light">Clan</label>
+                    <input type="text" name="clan" value="<%=shinobi.clan %>" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="rank" class="text-light">Rank</label>
+                    <input type="text" name="rank" value="<%=shinobi.rank %>" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="status" class="text-light">Status</label>
+                    <div class="radio inline">
+                        <input type="radio" id="radiostatus" name="status" value="Active" <%= shinobi.status == "Active"? 'checked' :''%>>
+                        <label for="radiostatus" class="radio-label">Active</label>
+                    </div>
+                    <div class="radio inline">
+                        <input type="radio" id="radiostatus2" name="status" value="Inactive" <%= shinobi.status == "Inactive"? 'checked' : ''%>>
+                        <label for="radiostatus2" class="radio-label">Inactive</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn text-dark update">Save</button>
+                </div>
+            </div>
+        </form>     
+    </div>
+</main>
+<%-include('include/_footer')%>

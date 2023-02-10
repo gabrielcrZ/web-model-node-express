@@ -1,0 +1,17 @@
+<% for(var i = 0; i<shinobi.length; i++) { %>
+<tr>
+    <td><%= i+1 %></td>
+    <td><%= shinobi[i].name %></td>
+    <td><%= shinobi[i].clan %></td>
+    <td><%= shinobi[i].rank %></td>
+    <td><%= shinobi[i].status %></td>
+    <td>
+        <a href="/update-shinobi?id=<%= shinobi[i]._id %>" class="btn border-shadow update">
+            <span class="text-gradient"><i class="fa-solid fa-user-pen"></i></span>    
+        </a>
+        <a href="##" class="btn border-shadow delete" data-id=<%= shinobi[i]._id %>>
+            <span class="text-gradient"><i class="fa-solid fa-user-minus"></i></span>    
+        </a>
+    </td>
+</tr>
+<% } %>
